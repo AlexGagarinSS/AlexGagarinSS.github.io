@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>FIB - Разведка и Добыча Информации</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #111;
+      padding: 30px 20px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      letter-spacing: 2px;
+      color: #00ffff;
+    }
+    nav {
+      margin-top: 15px;
+    }
+    nav a {
+      color: #00ffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    section {
+      padding: 50px 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .about, .missions, .contact {
+      margin-top: 30px;
+    }
+    footer {
+      background-color: #111;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .button {
+      background-color: #00ffff;
+      color: #0a0a0a;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #00cccc;
+    }
+    .mission-item {
+      margin-top: 20px;
+      text-align: left;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>FIB: Группа Разведки</h1>
+  <nav>
+    <a href="#about">О нас</a>
+    <a href="#missions">Операции</a>
+    <a href="#contact">Контакты</a>
+    <a href="cid.html">Работа CID</a>
+    <a href="interrogation.html">Допросы CID</a>
+  </nav>
+</header>
+
+<section id="about" class="about">
+  <h2>О нас</h2>
+  <p>Мы — элитная группа специалистов FIB, занимающаяся разведкой, анализом и добычей информации.</p>
+</section>
+
+<section id="missions" class="missions">
+  <h2>Наши Операции</h2>
+  <p>Мы проводим различные операции для защиты информации, предотвращения угроз и обеспечения безопасности.</p>
+
+  <div class="mission-item">
+    <h3>Операция "Цифровой Перехват"</h3>
+    <p>Миссия по перехвату критически важной информации, передаваемой через незащищённые каналы связи.</p>
+  </div>
+
+  <div class="mission-item">
+    <h3>Операция "Внедрение Агентов"</h3>
+    <p>Внедрение агентов в враждебные организации для сбора разведывательных данных и подтверждения информации которую мы получили до внедрения агента.</p>
+  </div>
+
+  <div class="mission-item">
+    <h3>Операция "Защита Корпоративных Секретов"</h3>
+    <p>Защита информации крупных корпораций от кибератак и утечек данных.</p>
+  </div>
+
+  <div class="mission-item">
+    <h3>Операция "Рейд"</h3>
+    <p>Сбор данных, планирование и проведение штурма с участием техники и штурмовиков. Для изъятия всего нелегального у криминальной организации.</p>
+  </div>
+
+
+</section>
+
+<section id="contact" class="contact">
+  <h1>Контакты</h1>
+  <br>Discord: alex_gagarin</p>
+</section>
+
+<footer>
+  © 2025 FIB Группа Разведки и добычи информации. Все права защищены.
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  function checkVisibility() {
+    const windowHeight = window.innerHeight;
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < windowHeight - 100) {
+        section.classList.add('show');
+      }
+    });
+  }
+  window.addEventListener('scroll', checkVisibility);
+  window.onload = checkVisibility;
+</script>
+
+</body>
+</html>
